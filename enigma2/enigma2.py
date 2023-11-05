@@ -5,12 +5,12 @@ from colorama import Fore, Back, Style
 from hash_checker  import hash_check, list_hash_check
 
 module_name = "ENIGMA2"
-__version__ = "0.1"
+__version__ = "1.0"
 
 def main():
     begin_perf = perf_counter()
     Hash=password=output_file_name=file_name=""
-    Is_file = False
+    is_file = False
 
     # Remove 1st argument from the
     # list of command line arguments
@@ -30,8 +30,7 @@ def main():
     
     except getopt.error as err:
         # output error, and return with an error code
-        print (str(err))
-        sys.exit()
+        sys.exit(Fore.RED+"(╬▔皿▔)╯ "+str(err))
 
     try:
         for currentArgument, currentValue in arguments:
@@ -40,7 +39,7 @@ def main():
             elif currentArgument in ("-h","--Hash"):
                 Hash = currentValue.encode("utf-8")
             elif currentArgument in ("-f","--Combinaition"):
-                Is_file = True
+                is_file = True
                 file_name = str(currentValue)
             elif currentArgument in ("-o", "--Output"):
                 output_file_name = str(currentValue)
@@ -52,7 +51,7 @@ def main():
             elif currentArgument in ("-p", "--Password"):
                 password = str(currentValue)
         
-        if Is_file:
+        if is_file:
             if len(password) > 4:
                 list_hash_check(file_name,output_file_name,data_file=password)
             else:
@@ -65,10 +64,10 @@ def main():
             
     except getopt.error as err:
         if err:
-            print(str(err))
+            sys.exit(Fore.RED+"(╬▔皿▔)╯ "+str(err))
         else:
-            print("Unknown error")
-    
+            sys.exit(Fore.RED+"＞︿＜ Unknown error"+str(err))
+
     delta = perf_counter() - begin_perf
     print(Fore.BLUE + f"Exécution time: {delta:.2f}s")
 

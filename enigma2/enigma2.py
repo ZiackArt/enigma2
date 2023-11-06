@@ -5,7 +5,7 @@ ENIGMA2: Find a password from a hash password
 This module allows you to retrieve a password from its hash
 """
 
-import string, getopt, sys, bcrypt
+import getopt, sys
 from tqdm import tqdm
 from time import perf_counter
 from colorama import Fore

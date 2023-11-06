@@ -1,6 +1,6 @@
 <p align=center>
   <br>
-  <a href="https://sherlock-project.github.io/" target="_blank"><img src="https://user-images.githubusercontent.com/27065646/53551960-ae4dff80-3b3a-11e9-9075-cef786c69364.png"/></a>
+   <img src="https://github.com/ZiackArt/enigma2/blob/main/enigma2/resources/enigma2.png"/></a>
   <br>
   <span>ENIGMA2: Find a password from a hash password</span>
   <br>

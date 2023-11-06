@@ -82,9 +82,9 @@ def main():
                 list_hash_check(file_name,output_file_name)
         else:
             if len(password) > 4:
-                list_hash_check(file_name,output_file_name,data_file=password)
+                hash_check(Hash,output_file_name,data_file=password)
             else:
-                list_hash_check(file_name,output_file_name)
+                hash_check(Hash,output_file_name)
             
     except getopt.error as err:
         if err:

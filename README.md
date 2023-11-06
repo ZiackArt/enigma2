@@ -66,6 +66,7 @@ To use your own password database list
 ```
 python3 enigma2 -f file.txt -o output_file_name.txt -p my_pwd_database.txt
 ```
+go to enigma2\hash_checker.py and Uncomment this line  "Data_file='./enigma2/resources/pwd.txt'" to have a larger database
 ## License
 
 Enigma2 Project<br/>

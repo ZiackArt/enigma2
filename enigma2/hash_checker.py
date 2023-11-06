@@ -2,7 +2,12 @@ import bcrypt, sys
 from tqdm import tqdm
 from colorama import Fore
 
-def hash_check(pwd_hash, output_file_name="", data_file="./enigma2/resources/pwds.txt"):
+Data_file = "./enigma2/resources/500-passwords.txt"
+# Uncomment this line to get a list of over 5 million passwords
+# Data loading time will be longer
+# Data_file = "./enigma2/resources/pwd.txt"
+
+def hash_check(pwd_hash, output_file_name="", data_file=Data_file):
     """
     Parameters
     ----------
@@ -33,7 +38,7 @@ def hash_check(pwd_hash, output_file_name="", data_file="./enigma2/resources/pwd
                 save(output=f"[ {str(pwd.decode('utf-8'))} => {pwd_hash.decode('utf-8')} ]",filename=output_file_name)
             break
 
-def list_hash_check(file, output_file_name="", data_file="./enigma2/resources/pwds.txt"):
+def list_hash_check(file, output_file_name="", data_file=Data_file):
     """
     Parameters
     ----------

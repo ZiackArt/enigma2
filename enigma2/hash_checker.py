@@ -4,20 +4,16 @@ from colorama import Fore
 
 def hash_check(pwd_hash, output_file_name="", data_file="./enigma2/resources/pwds.txt"):
     """
-    Decorate an iterable object, returning an iterator which acts exactly
-    like the original iterable, but prints a dynamically updating
-    progressbar every time a value is requested.
-
     Parameters
     ----------
-    `Pwd_hash`  : iterable, not optional
-        is the password hach that we will try to find.
+    `Pwd_hash`  : str, not optional
+        is the hash of the password that we will try to find.
     `Output_file_name`  : str, optional
-        Name of de output file. the ouput won't be save in a file if
-        this paremeter is absent
+        Name of the output file. The output won't be saved in a file if this parameter is absent.
     `data_file`  : str, optional
-        the file with a list of password, if absent, we will user our 
-        password database
+        the file with a list of passwords; if they are absent, 
+        we will use our password database.
+
     """
 
     try:
@@ -37,9 +33,20 @@ def hash_check(pwd_hash, output_file_name="", data_file="./enigma2/resources/pwd
                 save(output=f"[ {str(pwd.decode('utf-8'))} => {pwd_hash.decode('utf-8')} ]",filename=output_file_name)
             break
 
-def list_hash_check(output_file, output_file_name="", data_file="./enigma2/resources/pwds.txt"):
+def list_hash_check(file, output_file_name="", data_file="./enigma2/resources/pwds.txt"):
+    """
+    Parameters
+    ----------
+    `file`  : str, not optional
+        is the name of a list of hashed passwords that we will try to find.
+    `Output_file_name`  : str, optional
+        Name of the output file. The output won't be saved in a file if this parameter is absent.
+    `data_file`  : str, optional
+        the file with a list of passwords; if they are absent, 
+        we will use our password database.
+    """
     try:
-        my_file = open(output_file, "r") 
+        my_file = open(file, "r") 
         h_pwd_file = my_file.read().split("\n")
         my_file.close()
 
@@ -67,6 +74,7 @@ def list_hash_check(output_file, output_file_name="", data_file="./enigma2/resou
                 break
 
 def save(output,filename="enigma2.txt"):
+    # save fonction
     try:
         file = open(filename,"a")
         file.write(output)

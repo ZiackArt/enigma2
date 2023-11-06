@@ -1,24 +1,48 @@
+#! /usr/bin/env python3
+"""
+ENIGMA2: Find a password from a hash password
+
+This module allows you to retrieve a password from its hash
+"""
+
 import string, getopt, sys, bcrypt
 from tqdm import tqdm
 from time import perf_counter
-from colorama import Fore, Back, Style
+from colorama import Fore
 from hash_checker  import hash_check, list_hash_check
+
+helps =  """
+    ENIGMA2 allows you to retrieve a password from its hash
+        >py enigma2
+    Parameters
+    ----------
+    `-H`  : to display Helps
+    `-v`  : to have a runing version of enigma2
+    `-h`  : to give a single hash value
+    `-f`  : to give a txt file with a list of hash
+    `-o`  : to give a output file name (write nan if your want to use a default output file name)
+    `-p`  : (Optional) to give a txt passwords file name
+    
+    Good use
+    ----------
+    Author : ZiackArt
+    GitHub : https://github.com/ZiackArt
+"""
 
 module_name = "ENIGMA2"
 __version__ = "1.0"
+
+
 
 def main():
     begin_perf = perf_counter()
     Hash=password=output_file_name=file_name=""
     is_file = False
-
     # Remove 1st argument from the
-    # list of command line arguments
     argumentList = sys.argv[1:]
-
+    # list of command line arguments
     if len(argumentList) == 0:
-        print(f"{module_name} \nVersion: {__version__}")
-        sys.exit()
+        sys.exit(Fore.GREEN + f"{module_name} \nVersion: {__version__}")
 
     # Options
     options = "Hh:f:o:vp:"
@@ -35,7 +59,7 @@ def main():
     try:
         for currentArgument, currentValue in arguments:
             if currentArgument in ('-H',"--Help"):
-                print("helps menu")
+                sys.exit(Fore.GREEN + helps)
             elif currentArgument in ("-h","--Hash"):
                 Hash = currentValue.encode("utf-8")
             elif currentArgument in ("-f","--Combinaition"):

@@ -1,10 +1,8 @@
 #! /usr/bin/env python3
-
 """
-Gpwd: Find Usernames Across Social Networks Module
+ENIGMA2: Find a password from a hash password
 
-This module contains the main logic to search for usernames at social
-networks.
+This module allows you to retrieve a password from its hash
 """
 
 import sys

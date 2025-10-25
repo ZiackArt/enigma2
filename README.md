@@ -31,6 +31,12 @@ $ cd enigma2
 $ pip install -r requirements.txt (Install dependencies one by one if you encounter a problem)
 ```
 
+## ⚠️ Legal Disclaimer
+
+```console
+Enigma2 is meant strictly for ethical and authorized use — such as testing your own systems, cybersecurity research, or educational projects. Using this tool to crack or access data without permission is illegal and unethical.
+```
+
 ## Usage
 
 ```console

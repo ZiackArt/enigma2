@@ -3,8 +3,8 @@ from tqdm import tqdm
 from colorama import Fore
 
 Data_file = "./enigma2/resources/500-passwords.txt"
+
 # Uncomment this line to get a list of over 5 million passwords
-# Data loading time will be longer
 # Data_file = "./enigma2/resources/pwd.txt"
 
 def hash_check(pwd_hash, output_file_name="", data_file=Data_file):

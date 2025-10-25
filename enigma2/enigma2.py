@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 """
-ENIGMA2: Find a password from a hash password
+ENIGMA2: Find a password from a hash
 
-This module allows you to retrieve a password from its hash
+This module allows you to recover a password from its hash.
 """
 
 import getopt, sys
@@ -12,7 +12,7 @@ from colorama import Fore
 from hash_checker  import hash_check, list_hash_check
 
 helps =  """
-    ENIGMA2 allows you to retrieve a password from its hash
+    TERMINAL COMMANDS
         >py enigma2
     Parameters
     ----------
@@ -21,7 +21,7 @@ helps =  """
     `-h`  : to give a single hash value
     `-f`  : to give a txt file with a list of hash
     `-o`  : to give a output file name (write nan if your want to use a default output file name)
-    `-p`  : (Optional) to give a txt passwords file name
+    `-p`  : (Optional) to give your own txt passwords list file
     
     Good use
     ----------
